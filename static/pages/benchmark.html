@@ -1,0 +1,41 @@
+<div class="page" id="page-benchmark">
+    <div class="page-header" style="display: flex; justify-content: space-between; align-items: flex-end;">
+        <div>
+            <h1>Model Benchmarks</h1>
+            <p>Test responsiveness and speed for all available NIM models</p>
+        </div>
+        <div style="display: flex; gap: 8px; align-items: center;">
+            <div class="search-box" style="position: relative; margin-right: 8px;">
+                <i data-lucide="search" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); width: 14px; color: var(--text-muted);"></i>
+                <input type="text" id="bench-filter" placeholder="Filter models..." style="padding-left: 30px; height: 36px; border-radius: var(--radius); border: 1px solid var(--border); background: var(--bg-primary); color: var(--text-primary); width: 200px; font-size: 13px;">
+            </div>
+            <button class="btn btn-outline" id="btn-refresh-benchmark" title="Refresh Models List"><i data-lucide="refresh-cw"></i></button>
+            <button class="btn btn-primary" id="btn-run-selected"><i data-lucide="play-circle"></i> Run Selected</button>
+            <button class="btn btn-outline" id="btn-run-benchmark"><i data-lucide="play"></i> Run All</button>
+            <button class="btn btn-outline" id="btn-stop-benchmark" disabled><i data-lucide="square"></i> Stop</button>
+            <button class="btn btn-outline" id="btn-clear-history" title="Clear History"><i data-lucide="trash-2"></i></button>
+        </div>
+    </div>
+
+    <div class="recent-table" style="margin-bottom: 24px;">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 40px; text-align: center;"><input type="checkbox" id="bench-select-all"></th>
+                    <th class="sortable" data-sort="id" style="width: 35%; cursor: pointer; user-select: none;">Model Name <i data-lucide="arrow-up-down" style="width:12px; height:12px; opacity:0.5; vertical-align: middle;"></i></th>
+                    <th class="sortable" data-sort="ttft" style="width: 15%; cursor: pointer; user-select: none;">TTFT <i data-lucide="arrow-up-down" style="width:12px; height:12px; opacity:0.5; vertical-align: middle;"></i></th>
+                    <th class="sortable" data-sort="tps" style="width: 15%; cursor: pointer; user-select: none;">Speed (TPS) <i data-lucide="arrow-up-down" style="width:12px; height:12px; opacity:0.5; vertical-align: middle;"></i></th>
+                    <th class="sortable" data-sort="latency" style="width: 15%; cursor: pointer; user-select: none;">Latency <i data-lucide="arrow-up-down" style="width:12px; height:12px; opacity:0.5; vertical-align: middle;"></i></th>
+                    <th class="sortable" data-sort="status" style="width: 15%; cursor: pointer; user-select: none;">Status <i data-lucide="arrow-up-down" style="width:12px; height:12px; opacity:0.5; vertical-align: middle;"></i></th>
+                </tr>
+            </thead>
+            <tbody id="benchmark-tbody">
+                <tr>
+                    <td colspan="6" style="text-align: center; padding: 40px; color: var(--text-muted); font-style: italic;">
+                        Click "Run All" or select models and click "Run Selected" to begin benchmarking.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

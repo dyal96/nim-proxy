@@ -1,0 +1,9 @@
+@echo off
+echo Starting NVIDIA NIM Proxy in a new window...
+start "NIM Proxy" cmd /c start_proxy.bat
+
+echo Waiting 5 seconds for proxy to start...
+timeout /t 5 /nobreak > nul
+
+echo Launching Claude CLI...
+start "Claude CLI" cmd /c run_claude.bat

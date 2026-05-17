@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIM Control Center</title>
+    <meta name="description" content="NVIDIA NIM Local Proxy — Control Center for AI Model Management, Usage Analytics, and IDE Configuration">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.344.0/dist/umd/lucide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markdown-it@14.1.0/dist/markdown-it.min.js"></script>
+</head>
+<body>
+    <div class="app-shell">
+        <div class="sidebar-hit-area"></div>
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <div class="brand-icon">
+                    <i data-lucide="zap"></i>
+                </div>
+                <span class="brand-text">NIM</span>
+            </div>
+
+            <div class="nav-links">
+                <a href="#/" class="nav-link active" data-page="dashboard" id="nav-dashboard">
+                    <i data-lucide="layout-dashboard"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#/chat" class="nav-link" data-page="chat" id="nav-chat">
+                    <i data-lucide="message-square"></i>
+                    <span>Chat</span>
+                </a>
+                <a href="#/benchmark" class="nav-link" data-page="benchmark" id="nav-benchmark">
+                    <i data-lucide="activity"></i>
+                    <span>Benchmark</span>
+                </a>
+                <a href="#/settings" class="nav-link" data-page="settings" id="nav-settings">
+                    <i data-lucide="settings"></i>
+                    <span>Settings</span>
+                </a>
+                <a href="#/ide-configs" class="nav-link" data-page="ide-configs" id="nav-ide-configs">
+                    <i data-lucide="terminal"></i>
+                    <span>IDE Configs</span>
+                </a>
+                <a href="#/help" class="nav-link" data-page="help" id="nav-help">
+                    <i data-lucide="help-circle"></i>
+                    <span>Help Guide</span>
+                </a>
+                <a href="https://github.com/dyal96/nim-proxy" target="_blank" class="nav-link" style="margin-top: 10px; border-top: 1px solid var(--border-light); padding-top: 15px; border-radius: 0;">
+                    <i data-lucide="github"></i>
+                    <span>GitHub Repo</span>
+                </a>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="status-pill" id="status-pill">
+                    <span class="status-dot"></span>
+                    <span class="status-text">Online</span>
+                </div>
+                <button class="sidebar-btn" id="theme-toggle" title="Toggle Theme">
+                    <i data-lucide="sun"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content" id="main-content">
+            <!-- Pages loaded here dynamically -->
+            <div class="page-loader" id="page-loader">
+                <div class="loader-spinner"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

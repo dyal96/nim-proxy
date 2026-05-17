@@ -1,0 +1,64 @@
+<div class="page" id="page-dashboard">
+    <div class="page-header">
+        <h1>Dashboard</h1>
+        <p>Usage analytics and proxy status</p>
+    </div>
+
+    <div class="period-tabs" id="period-tabs">
+        <button class="period-tab" data-period="1h">1H</button>
+        <button class="period-tab" data-period="6h">6H</button>
+        <button class="period-tab active" data-period="24h">24H</button>
+        <button class="period-tab" data-period="7d">7D</button>
+        <button class="period-tab" data-period="30d">30D</button>
+        <button class="period-tab" data-period="all">All</button>
+    </div>
+
+    <div class="stats-grid" id="stats-grid">
+        <div class="stat-card">
+            <div class="stat-label"><i data-lucide="hash"></i> Total Requests</div>
+            <div class="stat-value" id="stat-requests">—</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label"><i data-lucide="coins"></i> Total Tokens</div>
+            <div class="stat-value" id="stat-tokens">—</div>
+            <div class="stat-sub" id="stat-tokens-detail"></div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label"><i data-lucide="timer"></i> Avg Latency</div>
+            <div class="stat-value" id="stat-latency">—</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label"><i data-lucide="cpu"></i> Active Model</div>
+            <div class="stat-value" id="stat-model" style="font-size:16px">—</div>
+        </div>
+    </div>
+
+    <div class="charts-grid">
+        <div class="chart-card">
+            <h3><i data-lucide="trending-up"></i> Token Usage Over Time</h3>
+            <div class="chart-container"><canvas id="chart-tokens"></canvas></div>
+        </div>
+        <div class="chart-card">
+            <h3><i data-lucide="pie-chart"></i> Model Distribution</h3>
+            <div class="chart-container"><canvas id="chart-models"></canvas></div>
+        </div>
+    </div>
+
+    <div class="recent-table" id="recent-table">
+        <h3><i data-lucide="clock"></i> Recent Activity</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Model</th>
+                    <th>In / Out</th>
+                    <th>Latency</th>
+                    <th>Source</th>
+                </tr>
+            </thead>
+            <tbody id="recent-tbody">
+                <tr><td colspan="5" class="empty-state">No activity recorded yet</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+<div class="page animate-fade-in">
+    <div class="header-bar">
+        <div>
+            <h1>Help Guide</h1>
+            <p class="subtitle">Learn how to use NIM Control Center</p>
+        </div>
+    </div>
+
+    <div class="grid" style="grid-template-columns: 1fr; max-width: 800px; margin: 0 auto;">
+        
+        <div class="card">
+            <h2 style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                <i data-lucide="zap" style="color: var(--primary);"></i> What is NIM Proxy?
+            </h2>
+            <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+                This proxy bridges the gap between powerful local AI coding agents (like Claude Code, Continue, Cline) and NVIDIA NIM's diverse model ecosystem. Because many AI agents are hardcoded to only understand the "Anthropic" or "OpenAI" API format, this proxy translates those formats automatically into NVIDIA's format.
+            </p>
+            <p style="color: var(--text-secondary); line-height: 1.6;">
+                You also get this comprehensive dashboard to track usage, compare model speeds, and chat directly with models locally!
+            </p>
+        </div>
+
+        <div class="card">
+            <h2 style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                <i data-lucide="layout-dashboard" style="color: var(--primary);"></i> Dashboard & Analytics
+            </h2>
+            <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+                Every API call made through this proxy (whether from the Chat page or your IDE) is logged in a local SQLite database (`usage.db`). The Dashboard visualizes this data, showing you how many tokens you're burning through and what your average latency is. You can purge this data anytime from the <strong>Settings</strong> page.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2 style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                <i data-lucide="activity" style="color: var(--primary);"></i> Live Benchmarking
+            </h2>
+            <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+                Not sure which model to use? The Benchmark tab streams real tokens and calculates the actual <strong>TPS (Tokens Per Second)</strong> and <strong>TTFT (Time To First Token)</strong> for any model available on NVIDIA NIM. Use this to find the fastest model for your hardware or internet connection.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2 style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                <i data-lucide="terminal" style="color: var(--primary);"></i> IDE Integration
+            </h2>
+            <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+                To use the active NIM model in your editor, go to the <strong>IDE Configs</strong> tab. It generates exact copy-paste configurations for tools like <em>Claude Code</em>, <em>Continue</em>, <em>Cline</em>, and <em>Crush</em>. 
+            </p>
+            <p style="color: var(--text-secondary); line-height: 1.6;">
+                <strong>Pro tip:</strong> When you change the model in the Settings tab, all your IDE extensions connected to the proxy will automatically start using the new model. No need to update their configs!
+            </p>
+        </div>
+
+        <div class="card" style="border-color: var(--primary); background: rgba(99, 102, 241, 0.05);">
+            <h2 style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                <i data-lucide="message-square" style="color: var(--primary);"></i> DeepSeek Reasoning Support
+            </h2>
+            <p style="color: var(--text-secondary); line-height: 1.6;">
+                The Chat UI natively parses and formats <code>&lt;think&gt;</code> tags outputted by reasoning models like DeepSeek-R1. It renders them as beautiful collapsible dropdowns so they don't clutter your main conversation.
+            </p>
+        </div>
+
+    </div>
+</div>
