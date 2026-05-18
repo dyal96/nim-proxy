@@ -88,7 +88,52 @@ In your `config.json`:
   ]
 }
 ```
+Hybrid `.config.yaml` for continue :
+```
+name: My Config
+version: 1.0.0
+schema: v1
+models:
+  - name: "NVIDIA Nemotron Nano 9B V2"
+    provider: nvidia
+    model: nvidia/nvidia-nemotron-nano-9b-v2
+    apiBase: "https://integrate.api.nvidia.com/v1"
+    # Use an env var reference so you don't store keys in plaintext here.
+    apiKey: "env:NVIDIA_API_KEY"
+    roles:
+      - chat
+      - edit
+      - apply
+    defaultCompletionOptions:
+      temperature: 0.7
+      maxTokens: 1500
 
+  - name: "Codestral"
+    provider: mistral
+    model: codestral-latest
+    roles:
+      - autocomplete
+    autocompleteOptions:
+      debounceDelay: 250
+      maxPromptTokens: 1024
+      onlyMyCode: true
+
+  - name: "NIM Proxy (local)"
+    provider: openai
+    model: qwen/qwen3-coder-480b-a35b-instruct
+    apiBase: "http://127.0.0.1:8082/v1"
+    # Use an env var reference so you don't store keys in plaintext here.
+    apiKey: "env:NVIDIA_API_KEY"
+    capabilities:
+      - tool_use
+      - image_input
+    roles:
+      - chat
+      - edit
+    defaultCompletionOptions:
+      temperature: 1.0
+      maxTokens: 1024
+```
 ### 4. Crush (Terminal AI)
 Add to your `.crush.json`:
 ```json
