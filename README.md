@@ -109,6 +109,37 @@ Add to your `.crush.json`:
   }
 }
 ```
-
+### 4. Crush (Antropic) (Terminal AI)
+Add to your `.crush.json`:
+```json
+{
+  "$schema": "https://charm.land/crush.json",
+  "models": {
+    "large": {
+      "model": "qwen/qwen3-coder-480b-a35b-instruct",
+      "provider": "nim-local"
+    }
+  },
+  "providers": {
+    "nim-local": {
+      "name": "NVIDIA NIM (Local)",
+      "base_url": "http://localhost:8082/v1/",
+      "type": "openai-compat",
+      "api_key": "sk-ant-dummy",
+      "models": [
+        {
+          "id": "qwen/qwen3-coder-480b-a35b-instruct",
+          "name": "qwen3-coder-480b-a35b-instruct",
+          "context_window": 128000,
+          "default_max_tokens": 8192
+        }
+      ]
+    }
+  },
+  "options": {
+    "debug": true
+  }
+}
+```
 ## 📝 License
 MIT
